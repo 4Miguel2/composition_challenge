@@ -59,4 +59,21 @@ public class Department {
         }
         return sum;
     }
+
+    public String toString () {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Folha de pagamento: \n");
+        sb.append("Departamento ");
+        sb.append(getName() +" = ");
+        sb.append(String.format("%.2f \n", payroll()));
+        sb.append("Pagamento realizado no dia ");
+        sb.append(getPayDay() +"\n");
+        sb.append("Funcionarios: \n");
+        for (Employee c: employees) {
+            sb.append(c.getName() + "\n");
+        }
+        sb.append("Para duvidas favor entrar em contato: ");
+        sb.append(address.getEmail());
+        return sb.toString();
+    }
 }
